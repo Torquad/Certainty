@@ -2,6 +2,7 @@
 using System.Collections;
 
 public class PlayerEnterTrigger : MonoBehaviour {
+	//as general as possible so I can reuse
 	public MonoBehaviour script;
 	public string functionToCall;
 
@@ -17,7 +18,7 @@ public class PlayerEnterTrigger : MonoBehaviour {
 
 	}
 
-	void OnTriggerEnter (Collider other)
+	void OnTriggerEnter (Collider other) //call any function with 0 arguments on any script OnTriggerEnter
 	{
 		if(other.tag == "Player" && triggerEnabled)
 		{

@@ -59,12 +59,11 @@ public class MovableBox : MonoBehaviour {
 		{
 			minHeight = hit.point.y + rb.transform.lossyScale.y/2; //place box adjacent to lower bound
 		}
-
-		//minPosition = rb.transform.lossyScale.y/2 + minHeight; //find
+			
 		//if (transform.position.y < minHeight)
 		//	throw new UnityException ("Position below minimum, sqrt of negative");
 
-		if (transform.position.y < minHeight) //bugged through floor
+		if (transform.position.y < minHeight) //if height bugged through floor
 		{
 			transform.position = new Vector3 (transform.position.x, minHeight, transform.position.z);
 		}

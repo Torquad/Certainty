@@ -65,7 +65,6 @@ public class Tutorial : MonoBehaviour {
 		{
 			case TutorialState.Intro:
 				Intro_Image.SetActive (false);
-				//leftButton.SetActive (true);
 				nextState = TutorialState.IntroDiagram0;
 				break;
 			
@@ -79,17 +78,8 @@ public class Tutorial : MonoBehaviour {
 				break;
 			case TutorialState.IntroDiagram2:
 				IntroDiagram2_Image.SetActive (false);
-				//rightButton.SetActive (true);
-				//doneButton.SetActive (false);
 				nextState = left ? TutorialState.IntroDiagram1 : TutorialState.Done0;
 				break;
-//			case TutorialState.Done0: //should never happen
-				//setup Puzzle2 Tutorial
-//				BeginTutorial1();
-//				nextState = TutorialState.Puzzle2Diagram0;
-//				throw new UnityException("Done Button Press");
-//				nextState = TutorialState.Intro;
-//				break;
 			case TutorialState.Puzzle2Diagram0:
 				Puzzle2Diagram0_Image.SetActive (false);
 				nextState = TutorialState.Puzzle2Diagram1;

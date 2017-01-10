@@ -7,10 +7,15 @@ public class ButtonScript : MonoBehaviour {
 	public Material materialOff;
 	public GameObject door;
 
+	private Renderer r;
+	private Animation anim;
+
 	// Use this for initialization
 	void Awake () {
-		Renderer r = this.gameObject.GetComponent<Renderer> ();
+		r = this.gameObject.GetComponent<Renderer> ();
 		r.material = materialOff;
+
+		anim = door.GetComponent<Animation> ();
 	}
 	
 	// Update is called once per frame
@@ -21,16 +26,13 @@ public class ButtonScript : MonoBehaviour {
 	void OnTriggerEnter(Collider other)
 	{
 		buttonDown.Play ();
-		Renderer r = this.gameObject.GetComponent<Renderer> ();
 		r.material = materialOn;
-		Animation yolo = door.GetComponent<Animation> ();
-		yolo.Play ("open");
+		anim.Play ("open");
 	}
 	void OnTriggerExit(Collider other)
 	{
 		buttonDown.Play ();
-		Renderer r = this.gameObject.GetComponent<Renderer> ();
 		r.material = materialOff;
-		door.GetComponent<Animation>().Play ("close");
+		anim.Play ("close");
 	}
 }
